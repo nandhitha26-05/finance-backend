@@ -9,5 +9,5 @@ class UserResponse(BaseModel):
     name: str
     age: int
 
-    class config:
+    class Config:
         orm_mode = True
