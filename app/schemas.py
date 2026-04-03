@@ -1,14 +1,13 @@
 from pydantic import BaseModel
 
-class UserBase(BaseModel):
+class UserCreate(BaseModel):
     name: str 
     age: int
 
-class UserCreate(UserBase):
-    pass    
+class UserResponse(BaseModel):
+    id: int  
+    name: str
+    age: int
 
-class UserResponse(UserBase):
-    id: int     
-
-    class Config: 
-        from_attributes = True   
+    class config:
+        orm_mode = True
